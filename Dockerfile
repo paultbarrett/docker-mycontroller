@@ -1,6 +1,7 @@
 FROM alpine:latest
-MAINTAINER me codar nl
-ENV MYCONTROLLER_URL="http://github.com/mycontroller-org/mycontroller/releases/download/0.0.3.Alpha2/mycontroller-dist-standalone-0.0.3.Alpha2-bundle.tar.gz"
+MAINTAINER pbarrett (at) bitsystems.com.au
+# Updated URL to reference FINAL build 
+ENV MYCONTROLLER_URL="https://drive.google.com/uc?export=download&confirm=z6ha&id=0BzuumrtRA7p6S1NKVVVHbmNHRTA"
 
 # pin to /tmp
 WORKDIR /tmp
