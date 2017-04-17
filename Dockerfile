@@ -1,17 +1,16 @@
 FROM alpine:latest
 MAINTAINER pbarrett (at) bitsystems.com.au
 # Updated URL to reference FINAL build 
-ENV MYCONTROLLER_URL="https://drive.google.com/uc?export=download&confirm=z6ha&id=0BzuumrtRA7p6S1NKVVVHbmNHRTA"
+# ENV MYCONTROLLER_URL="https://drive.google.com/uc?export=download&confirm=z6ha&id=0BzuumrtRA7p6S1NKVVVHbmNHRTA"
 
 # pin to /tmp
 WORKDIR /tmp
-
+COPY files/mycontroller-dist-standalone-0.0.3.Final-SNAPSHOT-bundle.tar.gz /tmp
 # dependencies
 RUN apk add --update --no-cache s6 ca-certificates openjdk8-jre-base wget
 
 # install
-RUN	   wget $MYCONTROLLER_URL -O mycontroller.tar.gz \
-	&& tar zxf mycontroller.tar.gz -C /usr/local \
+RUN 	tar mycontroller-dist-standalone-0.0.3.Final-SNAPSHOT-bundle.tar.gz -C /usr/local \
 	&& rm -f /tmp/*
 
 # add files
