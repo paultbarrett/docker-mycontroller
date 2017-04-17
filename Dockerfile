@@ -10,7 +10,7 @@ COPY files/mycontroller-dist-standalone-0.0.3.Final-SNAPSHOT-bundle.tar.gz /tmp
 RUN apk add --update --no-cache s6 ca-certificates openjdk8-jre-base wget
 
 # install
-RUN 	tar mycontroller-dist-standalone-0.0.3.Final-SNAPSHOT-bundle.tar.gz -C /usr/local \
+RUN 	tar -x mycontroller-dist-standalone-0.0.3.Final-SNAPSHOT-bundle.tar.gz -C /usr/local \
 	&& rm -f /tmp/*
 
 # add files
